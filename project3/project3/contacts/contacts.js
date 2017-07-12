@@ -14,7 +14,9 @@ app_contacts.controller("ContactsCtrl", function($scope, $firebaseArray, $fireba
   // download the data into a local object
   $scope.contacts = $firebaseArray(ref);
     console.log($scope.contacts);
-    
+    $scope.addPost = function() {
+    	console.log(123);
+    }
     
     $scope.showAddForm = function() {
         $scope.addFormShow = true;
