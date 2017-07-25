@@ -12,7 +12,8 @@ var app = angular.module("computer",['ngRoute'])
     }).
     when('/services',{
       templateUrl: 'services.html',
-      controller:'ServicesCtrl'
+   //   controller:'MainCtrl',
+     controller:'ServicesCtrl'
     }).
     when('/contact',{
       templateUrl: 'contact.html',
@@ -22,13 +23,17 @@ var app = angular.module("computer",['ngRoute'])
 }])
 
 .controller('MainCtrl', ['$scope', '$http', function($scope, $http){
+//  console.log("mainctrl_1");
   $http.get('services.json').then(function(response){
+  //  console.log("mainctrl_2");
     $scope.services = response.data;
   });
 }])
 
 .controller('ServicesCtrl', ['$scope', '$http', function($scope, $http){
+//  console.log("serviceCtrl_1");
   $http.get('services.json').then(function(response){
+ //   console.log("serviceCtrl_2");
     $scope.services = response.data;
   });
 }])
